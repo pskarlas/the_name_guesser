@@ -16,12 +16,14 @@ The response format should be JSON and including three keys:
 Any (plausible) way of guessing the country is okay (e.g. heuristic, database, external
 web-service, whatever :)) \
 Of course our service should be secure (and fast if possible)
+## Implementation
+
 ### User Story
 - As a **Developer** 
   I want to **consume an API endpoint that will provide country information on submitting a surname** 
   so that **I can use the data for decision making**
 
-### Basic Implementation Details
+### Details
 - RoR app (-- api flag)
 - API Versioning using routing concerns
 - Token based authentication (extremely simplified)
