@@ -5,20 +5,35 @@ class V1::CountriesController < ApplicationController
 
   def guess
     start = starting_execution
-    name = params[:name]
-    guessed_country = NamsorServices::GuessCountryFromName.new(name).call
+    person_name = params[:name]
+    # Check for present and well formatted param
+    return bad_request_for(person_name) unless valid_name?(person_name)
+
+    guessed_country = NamsorServices::DetermineCountryFromSurname.new(person_name).call
     if guessed_country.success?
       render json: {
         guessed_country: guessed_country.payload,
-        requested_name: name,
+        requested_name: person_name,
         time_processed: elapsed_from(start)
-      }
+      }, status: :ok
     else
-      render json: { status: :unprocessable_entity }
+      render json: { error: 'We could not process your request this time' },
+        status: :unprocessable_entity
     end
   end
 
   private
+
+  def bad_request_for(name)
+    render json: { error: 'A valid name parameter is required.
+                    Name should be present and consisted by letters only'.squish
+                  }, status: :bad_request
+  end
+
+  def valid_name?(name)
+    return false if name.nil?
+    name[/[[:alpha:]]+/] == name ? true : false
+  end
 
   def starting_execution
     Process.clock_gettime(Process::CLOCK_MONOTONIC)
@@ -28,4 +43,5 @@ class V1::CountriesController < ApplicationController
     ending = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     (ending - start).round(3)
   end
+
 end

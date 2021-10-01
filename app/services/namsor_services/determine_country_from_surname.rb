@@ -4,13 +4,13 @@
 # NamSor API v2.0.16
 module NamsorServices
   require 'net/http'
-  class GuessCountryFromName
+  class DetermineCountryFromSurname
 
     ACCESS_TOKEN = Rails.application.credentials.namsor_access_token
 
-    def initialize(name)
-      @name = name
-      @uri = URI('https://v2.namsor.com/NamSorAPIv2/api2/json/country/' + @name.to_s)
+    def initialize(surname)
+      surname = CGI.escape(surname)
+      @uri = URI('https://v2.namsor.com/NamSorAPIv2/api2/json/country/' + surname)
     end
 
     def call
