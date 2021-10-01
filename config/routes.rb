@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/country_guess', to: 'countries#guess'
   end
 
-  namespace :v1, defaults: {format: :json} do
+  namespace :v1, defaults: { format: :json } do
     concerns :base_api
   end
 end
