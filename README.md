@@ -19,18 +19,18 @@ Of course our service should be secure (and fast if possible)
 ## Implementation
 
 ### User Story
-- As a **Developer** 
-  I want to **consume an API endpoint that will provide country information on submitting a surname** 
-  so that **I can use the data for decision making**
+- As a **Developer/Customer**
+  I want to ** determine a person's country information via API when I send his surname**
+  so that **I can use the obtained information downstream...**
 
 ### Details
 - RoR app (-- api flag)
 - API Versioning using routing concerns
-- Token based authentication (extremely simplified)
-- Rate Limiting (1req/2secs - for demonstration purposes)
+- Token based authentication (simplified)
+- Rate Limiting 1req/2secs (value for demonstration purposes)
 
 ### Areas for Improvement
-- 
+- Creation of user accounts/access tokens
 
 ### Endpoint Documentation
 ![Screenshot 2021-10-01 at 5 51 08 PM](https://user-images.githubusercontent.com/12958182/135640865-ba15ad22-afef-490b-9eeb-ffa9c7bf1783.png)
