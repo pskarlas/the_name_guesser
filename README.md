@@ -33,6 +33,9 @@ Of course our service should be secure (and fast if possible)
 - Creation of user accounts/access tokens
 
 ### Endpoint Documentation
-![Screenshot 2021-10-04 at 11 30 46 AM](https://user-images.githubusercontent.com/12958182/135819077-3901e1c7-2c70-4a8c-a29f-e886b07d540f.png)
+
+![Screenshot 2021-10-04 at 11 39 28 AM](https://user-images.githubusercontent.com/12958182/135820168-f5a580c6-35cb-467f-8f5e-fdd9f51bf0c1.png)
+
+
 
 
