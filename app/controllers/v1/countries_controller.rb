@@ -6,10 +6,12 @@ class V1::CountriesController < ApplicationController
   def guess
     start = starting_execution
     person_name = params[:name]
-    # Check for present and well formatted param
+
+    # Return early and give feedback for clients bad request
     return bad_request_for(person_name) unless valid_name?(person_name)
 
     guessed_country = NamsorServices::DetermineCountryFromSurname.new(person_name).call
+
     if guessed_country.success?
       render json: {
         guessed_country: guessed_country.payload,
@@ -18,7 +20,7 @@ class V1::CountriesController < ApplicationController
       }, status: :ok
     else
       render json: { error: 'We could not process your request this time' },
-        status: :unprocessable_entity
+        status: :bad_gateway
     end
   end
 
