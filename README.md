@@ -18,10 +18,14 @@ web-service, whatever :)) \
 Of course our service should be secure (and fast if possible)
 ## Implementation
 
+### API URL
+ ```sh 
+ https://serene-cove-51651.herokuapp.com/
+ ```
 ### User Story
-- As a **Developer/Customer**
-  I want to ** determine a person's country information via API when I send his surname**
-  so that **I can use the obtained information downstream...**
+- *As a* **Developer/Customer** \
+  *I want to* **determine a person's country information via API when I send his surname**  \
+  *so that* **I can use the obtained information downstream...**
 
 ### Details
 - RoR app (-- api flag)
@@ -32,7 +36,7 @@ Of course our service should be secure (and fast if possible)
 
 ### Areas for Improvement
 - Creation of user accounts/access tokens
-- Move cache storate to a key-value store (Redis/Memcached)
+- Move cache storage to a key-value store (Redis/Memcached)
 
 ### Endpoint Documentation
 
