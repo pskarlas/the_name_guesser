@@ -27,10 +27,12 @@ Of course our service should be secure (and fast if possible)
 - RoR app (-- api flag)
 - API Versioning using routing concerns
 - Token based authentication (simplified)
+- Response Caching
 - Rate Limiting 1req/2secs (value for demonstration purposes)
 
 ### Areas for Improvement
 - Creation of user accounts/access tokens
+- Move cache storate to a key-value store (Redis/Memcached)
 
 ### Endpoint Documentation
 
